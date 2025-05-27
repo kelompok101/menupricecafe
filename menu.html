@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Price' Cafe</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f5f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .page {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .page.active {
+      display: block;
+    }
+    h2 {
+      color: #6b4e45;
+    }
+    .menu-item {
+      background: #fff;
+      border: 1px solid #e0dcd7;
+      padding: 10px 15px;
+      margin: 10px auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-item label {
+      flex-grow: 1;
+      text-align: left;
+      cursor: pointer;
+    }
+    .menu-item input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    .nav-buttons, .action-buttons {
+      margin: 1rem 0;
+    }
+    .btn {
+      background-color: #dbc1ac;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #b89b85;
+    }
+    .price {
+      font-weight: bold;
+    }
+    .receipt {
+      display: none;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 500px;
+      text-align: left;
+    }
+    .receipt.show {
+      display: block;
+    }
+    .receipt h3 {
+      margin-top: 0;
+      color: #6b4e45;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>☕ Price' Cafe Menu</h1>
+
+  <div class="page active" id="coffee">
+    <h2>Coffee</h2>
+ <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Americano"> Americano</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Kopi Gula Aren"> Kopi Gula Aren</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Mochaccino"> Mochaccino</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Cappucino"> Cappucino</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Caffe Latte"> Caffe Latte</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Spanish Latte"> Spanish Latte</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Vanilla Latte"> Vanilla Latte</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Matcha Fusion"> Matcha Fusion</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Caramel Machiato"> Caramel Machiato</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Butterscotch Latte"> Butterscotch Latte</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Arenscotch Latte"> Arenscotch Latte</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Buttercream Latte"> Buttercream Latte</label><span class="price">15.000</span></div>
+  </div>
+  </div>
+
+  <div class="page" id="snack">
+    <h2>Snack</h2>
+ <div class="menu-item"><label><input type="checkbox" value="10000" data-name="Cireng Chili Oil"> Cireng Chili Oil</label><span class="price">10.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="10000" data-name="Basreng Chili Oil"> Basreng Chili Oil</label><span class="price">10.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Ciz Fries"> Ciz Fries</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="12000" data-name="Pisang Goreng Original"> Pisang Goreng Original</label><span class="price">12.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Pisang Goreng Keju"> Pisang Goreng Keju</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Pisang Goreng Coklat"> Pisang Goreng Coklat</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Pisang Goreng Tiramisu"> Pisang Goreng Tiramisu</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Pisang Goreng Coklat Keju"> Pisang Goreng Coklat Keju</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="20000" data-name="Dimsum"> Dimsum</label><span class="price">20.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="25000" data-name="Mix Platter"> Mix Platter</label><span class="price">25.000</span></div>
+  </div>
+  </div>
+
+  <div class="page" id="noncoffee">
+    <h2>Non Coffee</h2>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Lychee Tea"> Lychee Tea</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Strawberry Tea"> Strawberry Tea</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Thai Tea"> Thai Tea</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Cookies & Cream"> Cookies & Cream</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Mango Breeze"> Mango Breeze</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Milky Taro"> Milky Taro</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Milk Tea Gula Aren"> Milk Tea Gula Aren</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="20000" data-name="Matcha"> Matcha</label><span class="price">20.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="20000" data-name="Chocolate Malt"> Chocolate Malt</label><span class="price">20.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="20000" data-name="Choco Caramela"> Choco Caramela</label><span class="price">20.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="23000" data-name="Feastable"> Feastable</label><span class="price">23.000</span></div>
+  </div>
+
+  <div class="page" id="ricebowl">
+    <h2>Ricebowl</h2>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Chick Popcorn"> Chick Popcorn</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Nugget & Sosis"> Nugget & Sosis</label><span class="price">15.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Karage"> Karage</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="20000" data-name="Slice Beef"> Slice Beef</label><span class="price">20.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="20000" data-name="Katsu"> Katsu</label><span class="price">20.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="23000" data-name="Chicken Salted Egg"> Chicken Salted Egg</label><span class="price">23.000</span></div>
+  </div>
+
+  <div class="page" id="mainfood">
+    <h2>Main Food</h2>
+    <div class="menu-item"><label><input type="checkbox" value="10000" data-name="Nasi Telur Kribo"> Nasi Telur Kribo</label><span class="price">10.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="12000" data-name="Mie Goreng Chili Oil"> Mie Goreng Chili Oil</label><span class="price">12.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="12000" data-name="Nasi Goreng Butter"> Nasi Goreng Butter</label><span class="price">12.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="15000" data-name="Indomie Ramen Hack"> Indomie Ramen Hack</label><span class="price">15.000</span></div>
+  </div>
+
+  <div class="page" id="alacarte">
+    <h2>Ala Carte</h2>
+    <div class="menu-item"><label><input type="checkbox" value="8000" data-name="Telor Kribo"> Telor Kribo</label><span class="price">8.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="8000" data-name="Indomi All Varian"> Indomi All Varian</label><span class="price">8.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="12000" data-name="Chicken Popcorn"> Chicken Popcorn</label><span class="price">12.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Chicken Karage"> Chicken Karage</label><span class="price">18.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="18000" data-name="Chicken Katsu"> Chicken Katsu</label><span class="price">18.000</span></div>
+  </div>
+
+  <div class="page" id="additional">
+    <h2>Additional</h2>
+    <div class="menu-item"><label><input type="checkbox" value="3000" data-name="Chili Oil"> Chili Oil</label><span class="price">3.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="3000" data-name="Mayo"> Mayo</label><span class="price">3.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="3000" data-name="Keju"> Keju</label><span class="price">3.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="2000" data-name="Ice Tube"> Ice Tube</label><span class="price">2.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="8000" data-name="Espresso"> Espresso</label><span class="price">8.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="2000" data-name="Sosis Nugget"> Sosis Nugget</label><span class="price">2.000</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="2500" data-name="Smoke Beef"> Smoke Beef</label><span class="price">2.500</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="2500" data-name="Telor"> Telor</label><span class="price">2.500</span></div>
+    <div class="menu-item"><label><input type="checkbox" value="5000" data-name="Nasi"> Nasi</label><span class="price">5.000</span></div>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="btn" id="prevBtn">⬅️ Sebelumnya</button>
+    <button class="btn" id="nextBtn">➡️ Selanjutnya</button>
+  </div>
+
+  <div class="action-buttons">
+    <button class="btn" id="checkoutBtn">💳 Checkout</button>
+  </div>
+
+  <div class="receipt" id="receipt"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const pages = document.querySelectorAll('.page');
+      let currentPage = 0;
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+
+      prevBtn.addEventListener('click', () => changePage(-1));
+      nextBtn.addEventListener('click', () => changePage(1));
+      checkoutBtn.addEventListener('click', generateReceipt);
+
+      function changePage(dir) {
+        pages[currentPage].classList.remove('active');
+        currentPage = (currentPage + dir + pages.length) % pages.length;
+        pages[currentPage].classList.add('active');
+      }
+
+      function generateReceipt() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const receipt = document.getElementById('receipt');
+        receipt.classList.add('show');
+
+        let total = 0;
+        let content = '<h3>Struk Pembelian</h3><ul>';
+
+        checkboxes.forEach(box => {
+          const price = parseInt(box.value);
+          const name = box.dataset.name;
+          total += price;
+          content += `<li>${name} - Rp${price.toLocaleString('id-ID')}</li>`;
+        });
+
+        const points = Math.floor(total / 15000);
+        content += `</ul><p><strong>Total: Rp${total.toLocaleString('id-ID')}</strong></p>`;
+        content += `<p>🎁 Poin didapat: <strong>${points} poin</strong></p>`;
+
+        receipt.innerHTML = content;
+      }
+    });
+  </script>
+</body>
+</html>
